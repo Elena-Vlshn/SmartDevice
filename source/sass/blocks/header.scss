@@ -1,0 +1,118 @@
+.header {
+  background: linear-gradient(180deg, #041827 84.9%, rgba(4, 24, 39, 0) 100%);
+  padding-top: 30px;
+  padding-bottom: 35px;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+
+  @include vp-1023 {
+    padding-top: 20px;
+    padding-bottom: 25px;
+  }
+
+  @include vp-767 {
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+}
+
+.header__logo {
+  display: flex;
+
+  svg {
+    display: block;
+  }
+
+  @include vp-767 {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.header__navigation {
+  display: flex;
+  padding-right: 3%;
+  justify-content: space-between;
+  align-items: center;
+
+  @include vp-1023 {
+    padding-right: 70px;
+  }
+
+  @include vp-767 {
+    padding-right: 35px;
+  }
+}
+
+.header__contacts {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  min-width: 40%;
+
+  svg {
+    margin-right: 15px;
+  }
+
+  @include vp-1023 {
+    min-width: 0;
+    margin-bottom: 0;
+
+    svg {
+      margin-right: 0;
+    }
+  }
+}
+
+.header__link {
+  display: flex;
+  align-items: center;
+
+  &_mail {
+    margin-right: 20px;
+  }
+
+  &_phone {
+    padding-right: 5px;
+  }
+
+  @include vp-1023 {
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: start;
+  }
+
+
+  @include vp-767 {
+    align-items: center;
+  }
+}
+
+.header__link-text {
+  @include vp-1023 {
+    display: none;
+  }
+}
+
+
+.header__button {
+  padding: 10px 15px;
+  background: transparent;
+  border: 1px solid #f2f5f7;
+  border-radius: 3px;
+  color: $color-default-white;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  font-family: $ff-robotocondensed;
+  font-weight: 700;
+  width: 160px;
+  margin-bottom: 5px;
+
+  @include vp-1023 {
+    display: none;
+  }
+}

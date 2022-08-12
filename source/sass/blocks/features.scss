@@ -1,0 +1,48 @@
+.features {
+  padding-top: 120px;
+  padding-bottom: 120px;
+
+  @include vp-1023 {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  @include vp-767 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+.features__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: minmax(300px, auto);
+  gap: 30px;
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.features__item {
+  display: flex;
+  border: 1px solid $color-border-gray;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 5px;
+    background-color: $color-default-blue;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  // @include vp-767 {
+
+  // }
+}

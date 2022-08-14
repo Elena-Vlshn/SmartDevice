@@ -11,7 +11,7 @@
     <link rel="preload" href="fonts/robotocondensedbold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="fonts/robotocondensedregular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   </head>
-  <body>
+  <body class="body">
     <div class="wrapper">
       <header class="header">
         <nav class="header__navigation container">
@@ -109,16 +109,10 @@
             </li>
         </section>
 
-        <div class="question">
+        <!-- <div class="question">
           <img src="/../img/paper-airplane.png" alt="">
         </div>
-        <div class="container">
-
-          <!-- <h1>Тестовая страница.</h1>
-          <p>На данной странице показан пример модальных окон.</p>
-          <p>Перед началом разработки не забудьте удалить всё содержимое &#8249;main&#8250;&#8249;&#8260;main&#8250;.</p>
-          <p><a class="btn" href="#" data-open-modal="feedback">modal--feedback link</a></p>
-          <p><a class="btn" href="#" data-open-modal="success">modal--success link</a></p> -->
+        <div class="container"> -->
         </div>
       </main>
       <footer class="footer">
@@ -156,9 +150,15 @@
             </section>
 
           </div>
-          <nav class="footer__navigation">
-            <h3 class="footer__nav-title">Разделы сайта</h3>
-            <ul class="footer__nav-list">
+
+          <nav class="footer__navigation accordion">
+            <div class="accordion__title-wrap">
+              <h3 class="accordion__title">Разделы сайта</h3>
+              <button class="accordion__button accordion__button_hidden" type="button">
+                <span class="visually-hidden">Открыть аккордеон</span>
+              </button>
+            </div>
+            <ul class="accordion__body footer__nav-list">
               <li class="footer__nav-item"><a class="footer__nav-link" href="#">О Компаниии</a></li>
               <li class="footer__nav-item"><a class="footer__nav-link" href="#">Комплектующие</a></li>
               <li class="footer__nav-item"><a class="footer__nav-link" href="#">Продукты</a></li>
@@ -168,45 +168,64 @@
               <li class="footer__nav-item"><a class="footer__nav-link" href="#">Монтаж печатных плат</a></li>
             </ul>
           </nav>
-          <address class="footer__contacts contacts">
-            <h4 class="contacts__title">Наш офис</h4>
-            <p class="contacts__street">г. Мытищи, Олимпийский проспект, д.10</p>
-            <a class="contacts__phone" href="tel:+74955984050">+7 (495) 589-40-50</a>
-            <a class="contacts__phone" href="tel:+79253895829">+7 (925) 389-58-29</a>
-            <a class="contacts__phone" href="tel:+79253647813">+7 (925) 364-78-13</a>
+          <address class="footer__contacts contacts accordion">
+            <div class="accordion__title-wrap">
+              <h4 class="accordion__title">Наш офис</h4>
+              <button class="accordion__button accordion__button_hidden" type="button">
+                <span class="visually-hidden">Закрыть аккордеон</span>
+              </button>
+            </div>
+            <div class="accordion__body">
+              <p class="contacts__street">г. Мытищи, Олимпийский проспект, д.10</p>
+              <a class="contacts__phone" href="tel:+74955984050">+7 (495) 589-40-50</a>
+              <a class="contacts__phone" href="tel:+79253895829">+7 (925) 389-58-29</a>
+              <a class="contacts__phone" href="tel:+79253647813">+7 (925) 364-78-13</a>
+            </div>
           </address>
         </div>
       </footer>
     </div>
 
     <!-- Модалки -->
-    <div class="modal modal--preload" data-modal="feedback">
+
+    <div class="modal">
       <div class="modal__wrapper">
-        <div class="modal__overlay" data-close-modal></div>
+        <div class="modal__overlay"></div>
         <div class="modal__content">
-          <p class="modal__description">Обычная модалка</p>
-          <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
-            <svg width="15" height="15">
+          <button class="modal__close-btn" type="button" aria-label="Закрыть попап">
+            <svg width="20" height="20">
               <use xlink:href="img/sprite_auto.svg#icon-close"></use>
             </svg>
           </button>
+          <h4 class="modal__title">Закажите звонок</h4>
+          <p class="modal__description">Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
+          <form class="modal__form form" action="https://echo.htmlacademy.ru/courses" method="post">
+            <ul>
+              <li>
+                <label class="visually-hidden" for="name">имя</label>
+                <input type="text" name="name" id="name" placeholder="Имя" required autofocus>
+              </li>
+              <li>
+                <label class="visually-hidden" for="phone">номер телефона</label>
+                <input type="tel" name="phone" id="phone" placeholder="Телефон" required>
+              </li>
+              <li>
+                <label class="visually-hidden" for="question">Ваш вопрос</label>
+                <textarea name="question" id="question" placeholder="Ваш вопрос" rows="5"></textarea>
+              </li>
+            </ul>
+            <button type="submit">Отправить</button>
+            <div>
+              <input type="checkbox" name="agree" id="agree" checked tabindex="-1" required>
+              <label for="agree">
+              <span tabindex="0"></span>
+              Я согласен на обработку  персональных данных</label>
+            </div>
+          </form>
         </div>
       </div>
     </div>
 
-    <div class="modal modal--preload modal--fit-content modal--no-scale" data-modal="success">
-      <div class="modal__wrapper">
-        <div class="modal__overlay" data-close-modal></div>
-        <div class="modal__content">
-          <p class="modal__description">Размер этой модалки зависит от ширины контента,<br> отключена анимация-скейл</p>
-          <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
-            <svg width="15" height="15">
-              <use xlink:href="img/sprite_auto.svg#icon-close"></use>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
 
     <script src="js/vendor.min.js"></script>
     <script src="js/main.min.js"></script>

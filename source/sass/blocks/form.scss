@@ -1,0 +1,140 @@
+.form {
+  background-color: $color-background-blue;
+  color: $color-default-white;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 22px;
+  }
+
+  li {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 19px;
+    }
+  }
+
+  input,
+  textarea {
+    background-color: $color-background-input;
+    padding: 14px 15px;
+    width: 100%;
+    border: none;
+    border-radius: 3px;
+    font: inherit;
+
+    &::placeholder {
+      color: $color-white;
+      font-size: 16px;
+      line-height: 21px;
+    }
+
+    // &:focus,
+    // &:hover {
+    //   background-color: $background-color-focus;
+    // }
+
+    // &:focus,
+    // &:active {
+    //   outline: 2px solid $color-focus-outline;
+    // }
+  }
+
+  textarea {
+    padding-top: 24px;
+    padding-bottom: 12px;
+  }
+
+  input[type="checkbox"] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    width: 0;
+  }
+
+  input[type="checkbox"]:invalid + label span {
+    border: 2px solid #e31414;
+  }
+
+  input[type="checkbox"] + label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    font-size: 14px;
+    line-height: 16px;
+    cursor: pointer;
+    opacity: 0.8;
+
+    // &:focus,
+    // &:hover {
+    //   color: $background-color-focus;
+    // }
+  }
+
+  input[type="checkbox"] + label span {
+    position: absolute;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border: 1px solid $color-white;
+
+    // &:focus {
+    //   outline: 2px solid $color-focus-outline;
+    // }
+
+    // &:hover {
+    //   background-color: $background-color-focus;
+    // }
+  }
+
+  input[type="checkbox"]:checked + label span::before {
+    content: " ";
+    background-image: url("../img/svg/check.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  button {
+    display: flex;
+    font-family: $ff-robotocondensed;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 700;
+    padding: 14px 20px 12px;
+    background-color: $color-background-dark;
+    color: $color-white;
+    justify-content: center;
+    border: none;
+    border-radius: 3px;
+    width: 100%;
+    user-select: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+    // &:focus,
+    // &:hover {
+    //   background-color: $background-color-focus;
+    // }
+
+    // &:focus {
+    //   outline: 2px solid $color-focus-outline;
+    // }
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+}

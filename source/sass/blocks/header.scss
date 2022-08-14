@@ -111,6 +111,7 @@
   font-weight: 700;
   width: 160px;
   margin-bottom: 5px;
+  cursor: pointer;
 
   @include vp-1023 {
     display: none;

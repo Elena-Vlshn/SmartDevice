@@ -63,7 +63,6 @@
 }
 
 .footer__navigation {
-  color: $color-white;
   padding-top: 5px;
 
   @include vp-767 {
@@ -72,16 +71,6 @@
   }
 }
 
-.footer__nav-title {
-  font-family: $ff-robotocondensed;
-  font-size: 15px;
-  line-height: 16px;
-  font-weight: 400;
-  text-transform: uppercase;
-  margin-top: 0;
-  margin-bottom: 20px;
-  letter-spacing: 0.05em;
-}
 
 .footer__nav-list {
   list-style: none;
@@ -100,7 +89,6 @@
 }
 
 .footer__nav-item {
-  opacity: 0.7;
   line-height: 22px;
   margin-top: 0;
   margin-bottom: 10px;
@@ -108,6 +96,8 @@
 }
 
 .footer__contacts {
+  padding-top: 5px;
+
   @include vp-767 {
     border-bottom: 1px solid $color-white;
     padding: 22px 25px 10px;

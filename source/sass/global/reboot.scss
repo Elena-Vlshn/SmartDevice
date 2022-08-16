@@ -37,6 +37,15 @@ body {
 a {
   color: $color-default-white;
   text-decoration: none;
+
+  &:focus {
+    outline: 2px solid $color-focus-outline;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
 }
 
 img,

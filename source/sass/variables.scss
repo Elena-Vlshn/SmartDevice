@@ -18,9 +18,11 @@ $color-background-wight:               #e5e5e5;
 $color-background-dark:                #041427;
 $color-background-blue:                #00b3ff;
 
+$color-focus-outline:                  #4c97b7;
+
 // Gradient
 
-$black-to-right:                    linear-gradient(139deg, rgba(4, 24, 39, 0.5) 50%, #00b3ff 50%);
+$black-to-right:                    linear-gradient(139deg, #135180 33.5%, #00b3ff 0%, #00b3ff 50%);
 
 
 // Typography

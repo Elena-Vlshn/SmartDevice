@@ -1,19 +1,42 @@
 .form {
-  background-color: $color-background-blue;
   color: $color-default-white;
+
+  h4 {
+    font-family: $ff-robotocondensed;
+    font-size: 36px;
+    line-height: 50px;
+    font-weight: 400;
+    color: $color-default-white;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-family: $ff-ptmono;
+    font-size: 16px;
+    line-height: 22px;
+    color: $color-default-white;
+    margin-top: 0;
+    margin-bottom: 35px;
+  }
 
   ul {
     margin: 0;
     padding: 0;
+    padding-left: 5px;
     list-style: none;
-    margin-bottom: 22px;
+    margin-bottom: 32px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+    row-gap: 20px;
   }
 
   li {
     display: flex;
 
-    &:not(:last-child) {
-      margin-bottom: 19px;
+    &:last-child {
+      grid-column: 1/-1;
     }
   }
 
@@ -32,15 +55,15 @@
       line-height: 21px;
     }
 
-    // &:focus,
-    // &:hover {
-    //   background-color: $background-color-focus;
-    // }
+    &:focus,
+    &:hover {
+      opacity: 0.7;
+    }
 
-    // &:focus,
-    // &:active {
-    //   outline: 2px solid $color-focus-outline;
-    // }
+    &:focus,
+    &:active {
+      outline: 2px solid $color-background-dark;
+    }
   }
 
   textarea {
@@ -62,6 +85,7 @@
   input[type="checkbox"] + label {
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     padding-left: 30px;
     font-size: 14px;
@@ -69,10 +93,10 @@
     cursor: pointer;
     opacity: 0.8;
 
-    // &:focus,
-    // &:hover {
-    //   color: $background-color-focus;
-    // }
+    &:focus,
+    &:hover {
+      opacity: 0.5;
+    }
   }
 
   input[type="checkbox"] + label span {
@@ -105,36 +129,149 @@
   }
 
   button {
-    display: flex;
+    display: inline-flex;
+    justify-content: center;
     font-family: $ff-robotocondensed;
     font-size: 16px;
     line-height: 19px;
     font-weight: 700;
+    letter-spacing: 0.05em;
     padding: 14px 20px 12px;
-    background-color: $color-background-dark;
     color: $color-white;
-    justify-content: center;
+    background-color: $color-background-dark;
     border: none;
     border-radius: 3px;
-    width: 100%;
     user-select: none;
     cursor: pointer;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    width: 265px;
+    margin-right: 20px;
 
-    // &:focus,
-    // &:hover {
-    //   background-color: $background-color-focus;
-    // }
+    &:focus,
+    &:hover {
+      opacity: 0.8;
+    }
 
-    // &:focus {
-    //   outline: 2px solid $color-focus-outline;
-    // }
+    &:focus {
+      outline: 2px solid $color-focus-outline;
+    }
   }
 
   div {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: end;
     margin: 0;
+    padding-left: 5px;
+  }
+
+  span {
+    max-width: 265px;
+  }
+
+  &_modal {
+    display: flex;
+    flex-direction: column;
+
+    h4 {
+      font-size: 30px;
+      line-height: 42px;
+      margin-bottom: 2px;
+    }
+
+    p {
+      margin-bottom: 39px;
+      max-width: 380px;
+    }
+
+    ul {
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    li {
+      &:not(:last-child) {
+        margin-bottom: 19px;
+      }
+    }
+
+    button {
+      width: 100%;
+      margin-bottom: 20px;
+      margin-right: 0;
+    }
+
+    div {
+      align-self: center;
+    }
+  }
+
+  @include vp-1023 {
+    h4 {
+      margin-bottom: 5px;
+    }
+
+    p {
+      margin-bottom: 25px;
+    }
+
+    textarea {
+      padding: 29px 12px 8px;
+    }
+
+    ul {
+      padding-left: 0;
+    }
+
+    div {
+      padding-left: 0;
+      align-items: center;
+      justify-content: start;
+    }
+
+    button {
+      margin-right: 85px;
+    }
+
+    span {
+      max-width: 260px;
+    }
+  }
+
+  @include vp-767 {
+    h4 {
+      font-size: 30px;
+      line-height: 42px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 19px;
+      margin-bottom: 32px;
+    }
+
+
+    ul {
+      grid-template-columns: 1fr;
+    }
+
+    input[type="checkbox"] + label span {
+      left: 4px;
+    }
+
+    textarea {
+      padding: 20px 12px 38px;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    button {
+      margin-right: 0;
+      margin-bottom: 22px;
+    }
   }
 }

@@ -24,6 +24,7 @@
 
 .contacts__phone {
   display: inline-flex;
+  align-self: start;
   line-height: 25px;
   margin-bottom: 6px;
 
@@ -32,4 +33,9 @@
     line-height: 25px;
     margin-bottom: 4px;
   }
+}
+
+.contacts__elem-wrap {
+  display: flex;
+  flex-direction: column;
 }

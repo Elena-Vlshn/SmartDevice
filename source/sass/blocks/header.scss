@@ -24,6 +24,10 @@
     display: block;
   }
 
+  &:focus {
+    outline: 2px solid $color-focus-outline;
+  }
+
   @include vp-767 {
     width: 35px;
     height: 35px;
@@ -101,17 +105,12 @@
   padding: 10px 15px;
   background: transparent;
   border: 1px solid #f2f5f7;
-  border-radius: 3px;
-  color: $color-default-white;
-  text-transform: uppercase;
   font-size: 14px;
   line-height: 16px;
-  letter-spacing: 0.05em;
-  font-family: $ff-robotocondensed;
-  font-weight: 700;
+
   width: 160px;
   margin-bottom: 5px;
-  cursor: pointer;
+
 
   @include vp-1023 {
     display: none;

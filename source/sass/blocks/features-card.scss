@@ -1,9 +1,10 @@
 .features-card {
   display: grid;
   grid-template-columns: 1fr;
-  // grid-template-rows: ;
-  row-gap: 20px;
+  grid-template-rows: 35px 35px 1fr;
+  row-gap: 16px;
   padding: 40px 43px;
+  min-height: 300px;
 
   svg {
     display: block;
@@ -13,15 +14,16 @@
   h3 {
     margin: 0;
     font-size: 24px;
-    line-height: 34px;
+    line-height: 35px;
     font-weight: 400;
     font-family: $ff-robotocondensed;
     color: $color-default-blue;
     align-self: center;
+    padding-top: 4px;
   }
 
   p {
-    line-height: 22px;
+    line-height: 21.5px;
     margin: 0;
   }
 
@@ -38,8 +40,22 @@
     }
   }
 
+  @include vp-1023 {
+    grid-template-rows: 35px auto 1fr;
+    row-gap: 8px;
+    padding-bottom: 28px;
+    padding-top: 38px;
+    min-height: 358px;
+
+    h3 {
+      padding-top: 8px;
+    }
+  }
+
   @include vp-767 {
-    padding: 30px;
+    padding: 30px 30px 75px;
+    min-height: 325px;
+
     // grid-template-rows: 33px 74px auto;
 
     svg {
@@ -50,6 +66,7 @@
     h3 {
       font-size: 20px;
       line-height: 28px;
+      padding-top: 2px;
     }
 
     p {

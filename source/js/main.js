@@ -14,8 +14,11 @@ window.addEventListener('DOMContentLoaded', () => {
   const accordions = document.querySelectorAll('.accordion');
 
   for (let accordion of accordions) {
-    accordion.querySelector('.accordion__body').classList.add('accordion__body_closed');
-    accordion.querySelector('.accordion__button').classList.remove('accordion__button_hidden');
+    if (window.innerWidth < 768) {
+      accordion.querySelector('.accordion__body').classList.add('accordion__body_closed');
+      accordion.querySelector('.accordion__button').classList.remove('accordion__button_hidden');
+    }
+
   }
 
   function outsideEvtListener(event) {

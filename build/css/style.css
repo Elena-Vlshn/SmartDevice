@@ -800,6 +800,8 @@ button,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-item-align: start;
+  align-self: start;
 }
 
 .header__logo svg {
@@ -818,9 +820,9 @@ button,
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .header__contacts {
@@ -829,8 +831,12 @@ button,
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  min-width: 40%;
-  margin: 0 20px 5px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  min-width: 43%;
+  margin-bottom: 5px;
+  padding: 0 23px 0 17px;
 }
 
 .header__contacts svg {
@@ -844,19 +850,16 @@ button,
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.header__link:not(:last-child) {
-  margin-right: 20px;
+  margin-left: 20px;
 }
 
 .header__button {
-  padding: 10px 15px;
+  padding: 11px 12px;
   background: transparent;
   border: 1px solid #f2f5f7;
   font-size: 14px;
   line-height: 16px;
-  width: 160px;
+  width: 162px;
   margin-bottom: 5px;
   margin-top: 0;
 }
@@ -985,6 +988,7 @@ button,
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .social__item:not(:last-child) {
@@ -999,8 +1003,8 @@ button,
 
 .footer {
   background-color: #041827;
-  padding-top: 50px;
-  padding-bottom: 55px;
+  padding-top: 52px;
+  padding-bottom: 50px;
 }
 
 .footer__content {
@@ -1194,7 +1198,7 @@ button,
   font-weight: 400;
   color: #f2f5f6;
   margin-top: 0;
-  margin-bottom: 15px;
+  margin-bottom: 13px;
 }
 
 .form p {
@@ -1447,7 +1451,7 @@ button,
 }
 
 .accordion {
-  padding-top: 5px;
+  padding-top: 6px;
   color: #ffffff;
 }
 
@@ -1458,7 +1462,7 @@ button,
   font-weight: 400;
   text-transform: uppercase;
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   letter-spacing: 0.05em;
 }
 
@@ -1535,7 +1539,7 @@ button,
   background-color: #041427;
   color: #ffffff;
   padding-top: 67px;
-  padding-bottom: 142px;
+  padding-bottom: 140px;
 }
 
 .catalog__title {
@@ -1654,6 +1658,10 @@ button,
     justify-content: end;
     margin: 0;
     max-width: 50%;
+    padding: 0;
+    -ms-flex-item-align: start;
+    -ms-grid-row-align: start;
+    align-self: start;
   }
 
   .header__contacts svg {
@@ -1716,6 +1724,10 @@ button,
 
   .intro__button {
     margin-left: 48px;
+  }
+
+  .social__list {
+    padding-left: 60px;
   }
 
   .social__item {

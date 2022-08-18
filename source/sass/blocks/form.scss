@@ -17,7 +17,7 @@
     line-height: 22px;
     color: $color-default-white;
     margin-top: 0;
-    margin-bottom: 35px;
+    margin-bottom: 33px;
   }
 
   ul {
@@ -208,7 +208,7 @@
 
   @include vp-1023 {
     h4 {
-      margin-bottom: 5px;
+      margin-bottom: 6px;
     }
 
     p {
@@ -221,6 +221,7 @@
 
     ul {
       padding-left: 0;
+      margin-bottom: 34px;
     }
 
     div {
@@ -254,10 +255,11 @@
 
     ul {
       grid-template-columns: 1fr;
+      margin-bottom: 30px;
     }
 
-    input[type="checkbox"] + label span {
-      left: 4px;
+    input[type="checkbox"] + label {
+      padding-left: 26px;
     }
 
     textarea {
@@ -270,8 +272,9 @@
     }
 
     button {
+      width: 100%;
       margin-right: 0;
-      margin-bottom: 22px;
+      margin-bottom: 23px;
     }
   }
 }

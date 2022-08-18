@@ -3,6 +3,10 @@
   padding-top: 50px;
   padding-bottom: 55px;
 
+  @include vp-1023 {
+    padding-top: 50px;
+  }
+
   @include vp-767 {
     padding-top: 35px;
     padding-bottom: 35px;
@@ -15,8 +19,7 @@
   column-gap: 30px;
 
   @include vp-1023 {
-    grid-template-columns: minmax(220px, auto) minmax(345px, auto);
-    padding-bottom: 65px;
+    grid-template-columns: 1fr 320px;
     column-gap: 130px;
   }
 
@@ -31,25 +34,27 @@
   display: flex;
   flex-direction: column;
   align-items: start;
+  padding-right: 30px;
 
   @include vp-1023 {
     grid-column: 1/-1;
     flex-direction: row;
     justify-content: space-between;
+    padding-right: 0;
   }
 
   @include vp-767 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 26px;
+    padding-bottom: 28px;
     border-bottom: 1px solid $color-white;
   }
 }
 
 .footer__logo {
   display: inline-flex;
-  margin-bottom: 20px;
+  margin-bottom: 27px;
 
   svg {
     display: block;
@@ -59,53 +64,46 @@
     outline: 2px solid $color-focus-outline;
   }
 
+  @include vp-1023 {
+    margin-bottom: 32px;
+  }
+
   @include vp-767 {
-    margin-bottom: 14px;
+    margin-bottom: 10px;
+    position: relative;
+    left: -2px;
   }
 }
 
 .footer__social {
   padding-left: 10px;
-}
 
-.footer__navigation {
-  padding-top: 5px;
-
-  @include vp-767 {
-    padding: 20px 25px;
-    border-bottom: 1px solid $color-white;
+  @include vp-1023 {
+    padding-left: 0;
+    padding-top: 10px;
   }
 }
-
 
 .footer__nav-list {
   list-style: none;
   margin: 0;
   padding: 0;
-  // display: grid;
-  // grid-template-columns: repeat(2, 220px);
-  // column-gap: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  column-width: 220px;
+  column-gap: 30px;
 
   @include vp-1023 {
-    grid-template-columns: 220px;
+    column-count: 1;
   }
 }
 
 .footer__nav-item {
   line-height: 22px;
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   width: 220px;
-}
 
-.footer__contacts {
-  padding-top: 5px;
-
-  @include vp-767 {
-    border-bottom: 1px solid $color-white;
-    padding: 22px 25px 10px;
+  @include vp-1023 {
+    margin-bottom: 8px;
   }
 }
+

@@ -9,10 +9,10 @@
 
   @include vp-1023 {
     padding-top: 35px;
-    padding-bottom: 75px;
+    padding-bottom: 70px;
 
     img {
-      margin-right: 27px;
+      margin-right: 25px;
       height: 320px;
       position: relative;
       left: -3px;
@@ -36,14 +36,26 @@
   overflow: hidden;
   margin-bottom: 12px;
 
+  &_opened {
+    height: auto;
+  }
+
   @include vp-1023 {
     height: 260px;
     margin-bottom: 8px;
+
+    &_opened {
+      height: auto;
+    }
   }
 
   @include vp-767 {
     height: 205px;
     margin-bottom: 8px;
+
+    &_opened {
+      height: auto;
+    }
   }
 }
 
@@ -56,7 +68,7 @@
   margin-bottom: 12px;
 
   @include vp-1023 {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
 
   @include vp-767 {

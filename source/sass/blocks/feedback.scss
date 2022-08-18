@@ -5,13 +5,17 @@
   background-color: $color-background-blue;
   background-image: url("../../img/svg/triangle.svg");
   background-repeat: no-repeat;
-  background-size: 51% auto;
+  background-size: 50.5% auto;
 
   @include vp-1023 {
     background: none;
     background-color: $color-background-blue;
     padding-top: 47px;
-    padding-bottom: 125px;
+    padding-bottom: 124px;
+  }
+
+  @include vp-767 {
+    padding-bottom: 90px;
   }
 }
 
@@ -38,6 +42,7 @@
 .feedback__form {
   width: 49%;
   padding-right: 10px;
+  padding-left: 4px;
 
   @include vp-1023 {
     width: 100%;

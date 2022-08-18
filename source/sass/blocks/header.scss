@@ -38,7 +38,7 @@
   display: flex;
   padding-right: 3%;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
 
   @include vp-1023 {
     padding-right: 70px;
@@ -51,17 +51,19 @@
 
 .header__contacts {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 5px;
+  flex-wrap: wrap;
+  // justify-content: space-between;
   min-width: 40%;
+  margin: 0 20px 5px;
 
   svg {
     margin-right: 15px;
   }
 
   @include vp-1023 {
-    min-width: 0;
-    margin-bottom: 0;
+    justify-content: end;
+    margin: 0;
+    max-width: 50%;
 
     svg {
       margin-right: 0;
@@ -73,19 +75,14 @@
   display: flex;
   align-items: center;
 
-  &_mail {
+  &:not(:last-child) {
     margin-right: 20px;
-  }
-
-  &_phone {
-    padding-right: 5px;
   }
 
   @include vp-1023 {
     width: 40px;
     height: 40px;
     justify-content: center;
-    align-items: start;
   }
 
 
@@ -110,6 +107,7 @@
 
   width: 160px;
   margin-bottom: 5px;
+  margin-top: 0;
 
 
   @include vp-1023 {

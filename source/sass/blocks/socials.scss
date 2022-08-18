@@ -18,6 +18,15 @@
   &:not(:last-child) {
     margin-right: 16px;
   }
+
+  @include vp-1023 {
+    width: 30px;
+    height: 30px;
+
+    &:not(:last-child) {
+      margin-right: 25px;
+    }
+  }
 }
 
 .social__link {

@@ -1,4 +1,4 @@
-.intro {
+.introduction {
   position: relative;
   color: $color-default-white;
   font-family: $ff-robotocondensed;
@@ -22,7 +22,7 @@
   }
 }
 
-.intro__img-wrap {
+.introduction__img-wrap {
   background-color: $color-background-dark;
   position: absolute;
   top: 0;
@@ -32,7 +32,7 @@
   z-index: -1;
 }
 
-.intro__inner {
+.introduction__inner {
   padding-top: 305px;
   padding-left: 125px;
 
@@ -47,7 +47,7 @@
   }
 }
 
-.intro__title {
+.introduction__title {
   font-size: 80px;
   font-weight: 700;
   line-height: 94px;
@@ -69,7 +69,7 @@
   }
 }
 
-.intro__subtitle {
+.introduction__subtitle {
   font-family: $ff-ptmono;
   font-size: 22px;
   margin-top: 0;
@@ -89,7 +89,7 @@
   }
 }
 
-.intro__button {
+.introduction__button {
   font-size: 18px;
   line-height: 21px;
   padding: 16px 25px 17px;
@@ -104,7 +104,7 @@
   }
 }
 
-.intro__button-mobile {
+.introduction__button-mobile {
   display: none;
 
   @include vp-767 {
@@ -115,7 +115,5 @@
     width: 100%;
     justify-content: center;
     padding: 12px 30px;
-    // text-transform: uppercase;
-    // // cursor: pointer;
   }
 }

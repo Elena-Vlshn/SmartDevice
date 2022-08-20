@@ -1,21 +1,16 @@
 import {iosVhFix} from './utils/ios-vh-fix';
-import {initModals} from './modules/modals/init-modals';
+// import {initModals} from './modules/modals/init-modals';
 
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
   const callButton = document.querySelector('.header__button');
-  const modal = document.querySelector('.modal');
   const body = document.querySelector('.body');
-  const modalForm = modal.querySelector('.form');
-  // const modalFormSubmitButton = modal.querySelector('button[type="submit"]');
   const descriptionButtonOpen = document.querySelector('.about__button');
+  const modal = document.querySelector('.modal');
 
   const accordionButtons = document.querySelectorAll('.accordion__button');
   const accordions = document.querySelectorAll('.accordion');
-
-  document.getElementById('modal-name').focus();
-  document.querySelector('#modal-name').focus();
 
   for (let accordion of accordions) {
     if (window.innerWidth < 768) {
@@ -24,21 +19,41 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // закрытие модального при клике на оверлей
-  function outsideEvtListener(event) {
-    const target = event.target;
-    if (target.classList.contains('modal__overlay')) {
-      modalClose();
-    }
+
+  // открытие модального окна
+  function openModal() {
+    const modalClosedButton = modal.querySelector('.modal__close-btn');
+    const nameInput = modal.querySelector('#modal-name');
+    modal.classList.add('modal_opened');
+    nameInput.focus();
+    body.classList.add('scroll-lock');
+    document.addEventListener('click', onOverlyaClick);
+    modalClosedButton.addEventListener('click', closeModal);
   }
 
   // закрытие модального окна
-  function modalClose() {
+  function closeModal() {
     modal.classList.remove('modal_opened');
     body.classList.remove('scroll-lock');
-    document.removeEventListener('click', outsideEvtListener);
-    modalForm.reset();
+    document.removeEventListener('click', onOverlyaClick);
+    modal.querySelector('.form').reset();
   }
+
+
+  // закрытие модального при клике на оверлей
+  function onOverlyaClick(event) {
+    const target = event.target;
+    if (target.classList.contains('modal__overlay')) {
+      closeModal();
+    }
+  }
+
+  // открытие модального окна
+  callButton.addEventListener('click', function () {
+    if (modal !== null) {
+      openModal();
+    }
+  });
 
   // функция раскрывает/сворачивает полное описание
   function descriptionHeightToggle(event) {
@@ -54,7 +69,6 @@ window.addEventListener('DOMContentLoaded', () => {
     description.classList.toggle('about__description_opened');
     descriptionButton.textContent = 'Свернуть';
   }
-
 
   // маска для телефона
   //  источник https://github.com/KatrinaNov/maskPhone/blob/master/maskPhone.js
@@ -98,17 +112,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
   maskPhone();
 
-  // открытие модального окна
-  callButton.addEventListener('click', function () {
-    const modalClosedButton = modal.querySelector('.modal__close-btn');
-    const nameInput = modal.querySelector('#modal-name');
-    nameInput.focus();
-    modal.classList.add('modal_opened');
-    body.classList.add('scroll-lock');
-    document.addEventListener('click', outsideEvtListener);
-    modalClosedButton.addEventListener('click', modalClose);
-  });
-
   descriptionButtonOpen.addEventListener('click', descriptionHeightToggle);
 
   for (let button of accordionButtons) {
@@ -142,9 +145,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
-  window.addEventListener('load', () => {
-    initModals();
-  });
+  // window.addEventListener('load', () => {
+  //   initModals();
+  // });
 });
 
 // ---------------------------------

@@ -100,36 +100,4 @@
       opacity: 0.5;
     }
   }
-
-  // &--responsive {
-  //   .modal__content {
-  //     width: 100%;
-  //   }
-  // }
-
-  // &--fit-content {
-  //   .modal__content {
-  //     width: auto;
-
-  //     @include vp-767 {
-  //       width: 100%;
-  //     }
-  //   }
-  // }
-
-  // &--no-scale {
-  //   transform: none;
-  // }
-
-  // &--preload {
-  //   transition: none;
-  // }
-
-  // &.is-active {
-  //   transform: scale(1);
-  //   visibility: visible;
-  //   opacity: 1;
-
-  //   pointer-events: auto;
-  // }
 }

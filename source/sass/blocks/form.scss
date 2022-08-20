@@ -105,14 +105,6 @@
     width: 15px;
     height: 15px;
     border: 1px solid $color-white;
-
-    // &:focus {
-    //   outline: 2px solid $color-focus-outline;
-    // }
-
-    // &:hover {
-    //   background-color: $background-color-focus;
-    // }
   }
 
   input[type="checkbox"]:checked + label span::before {

@@ -427,7 +427,7 @@ html {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  font-family: "PT Mono", "Arial", monospace;
+  font-family: "PT Mono", "Courier", monospace;
   color: #041827;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
@@ -935,7 +935,7 @@ button,
 }
 
 .introduction__subtitle {
-  font-family: "PT Mono", "Arial", monospace;
+  font-family: "PT Mono", "Courier", monospace;
   font-size: 22px;
   margin-top: 0;
   margin-bottom: 33px;
@@ -1230,7 +1230,7 @@ button,
 }
 
 .form p {
-  font-family: "PT Mono", "Arial", monospace;
+  font-family: "PT Mono", "Courier", monospace;
   font-size: 16px;
   line-height: 22px;
   color: #f2f5f6;
@@ -1479,10 +1479,6 @@ button,
 }
 
 .accordion__button {
-  display: none;
-}
-
-.accordion__body_closed {
   display: none;
 }
 
@@ -2124,6 +2120,10 @@ button,
   }
 
   .accordion__button_hidden {
+    display: none;
+  }
+
+  .accordion__body_closed {
     display: none;
   }
 

@@ -24,7 +24,9 @@
 }
 
 .accordion__body {
-  &_closed {
-    display: none;
+  @include vp-767 {
+    &_closed {
+      display: none;
+    }
   }
 }

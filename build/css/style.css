@@ -1177,6 +1177,7 @@ button,
   row-gap: 16px;
   padding: 40px 44px;
   min-height: 298px;
+  overflow: scroll;
 }
 
 .features-card svg {
@@ -1908,6 +1909,9 @@ button,
   .header__logo {
     width: 35px;
     height: 35px;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
   }
 
   .header__navigation {

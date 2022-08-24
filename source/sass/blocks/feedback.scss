@@ -3,7 +3,7 @@
   padding-top: 8.5%;
   padding-bottom: 13%;
   background-color: $color-background-blue;
-  background-image: url("../../img/svg/triangle.svg");
+  background-image: url("../img/svg/triangle.svg");
   background-repeat: no-repeat;
   background-size: 50.5% auto;
 
@@ -20,19 +20,21 @@
 }
 
 .feedback__inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 600px;
+  column-gap: 20px;
 
   img {
-    width: 42%;
+    align-self: center;
     height: fit-content;
     position: relative;
-    bottom: -12px;
-    left: -3px;
+    bottom: -15px;
+    left: 5px;
   }
 
   @include vp-1023 {
+    display: flex;
+
     img {
       display: none;
     }
@@ -40,9 +42,8 @@
 }
 
 .feedback__form {
-  width: 49%;
-  padding-right: 10px;
-  padding-left: 4px;
+  width: 600px;
+  padding-left: 14px;
 
   @include vp-1023 {
     width: 100%;

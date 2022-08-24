@@ -5,7 +5,6 @@
   row-gap: 16px;
   padding: 40px 44px;
   min-height: 298px;
-  overflow: scroll;
 
   svg {
     display: block;
@@ -26,6 +25,7 @@
   p {
     line-height: 21.5px;
     margin: 0;
+    overflow: auto;
   }
 
   &:hover {

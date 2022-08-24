@@ -19,6 +19,46 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // управление фокусом в модальном окне
+
+  function trapFocus(e) {
+    const modalClosedButton = modal.querySelector('.modal__close-btn');
+    const focusableFormEls = modal.querySelector('.form').querySelectorAll('button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="tel"]:not([disabled]), input[type="checkbox"]:not([disabled]), textaria');
+
+    const firstFocusableEl = focusableFormEls[0];
+    const lastFocusableEl = focusableFormEls[focusableFormEls.length - 1];
+
+    if (e.key !== 'Tab') {
+      return;
+    }
+
+    if (e.key === 'Tab' && e.shiftKey) /* shift + tab */ {
+      if (document.activeElement === firstFocusableEl) {
+        modalClosedButton.focus();
+        e.preventDefault();
+      } else if (document.activeElement === modalClosedButton) {
+        lastFocusableEl.focus();
+        e.preventDefault();
+      }
+    } else /* tab */ {
+      if (document.activeElement === lastFocusableEl) {
+        modalClosedButton.focus();
+        e.preventDefault();
+      } else if (document.activeElement === modalClosedButton) {
+        firstFocusableEl.focus();
+        e.preventDefault();
+      }
+    }
+    // });
+  }
+
+  // закрытие модального окна по Esc
+  function onEscKeydown(e) {
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      closeModal();
+    }
+  }
 
   // открытие модального окна
   function openModal() {
@@ -28,7 +68,9 @@ window.addEventListener('DOMContentLoaded', () => {
     nameInput.focus();
     body.classList.add('scroll-lock');
     document.addEventListener('click', onOverlyaClick);
+    document.addEventListener('keydown', onEscKeydown);
     modalClosedButton.addEventListener('click', closeModal);
+    modal.addEventListener('keydown', trapFocus);
   }
 
   // закрытие модального окна
@@ -36,6 +78,7 @@ window.addEventListener('DOMContentLoaded', () => {
     modal.classList.remove('modal_opened');
     body.classList.remove('scroll-lock');
     document.removeEventListener('click', onOverlyaClick);
+    document.removeEventListener('keydown', onEscKeydown);
     modal.querySelector('.form').reset();
   }
 

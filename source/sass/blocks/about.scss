@@ -5,6 +5,7 @@
 
   img {
     margin-right: 100px;
+    height: fit-content;
   }
 
   @include vp-1023 {

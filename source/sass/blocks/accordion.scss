@@ -6,15 +6,18 @@
     display: inline-flex;
     border: none;
     background-color: $color-background-dark;
-    background-image: url("../../img/svg/accordion-open-btn.svg");
+    background-image: url("../img/svg/accordion-open-btn.svg");
     background-repeat: no-repeat;
-    background-position: center;
-    width: 15px;
-    height: 15px;
+    background-position: right;
     cursor: pointer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 25px;
 
     &_closed {
-      background-image: url("../../img/svg/accordion-close-btn.svg");
+      background-image: url("../img/svg/accordion-close-btn.svg");
     }
 
     &_hidden {

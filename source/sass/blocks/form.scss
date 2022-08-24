@@ -138,6 +138,7 @@
     text-transform: uppercase;
     width: 265px;
     margin-right: 20px;
+    order: -1;
 
     &:focus,
     &:hover {
@@ -168,17 +169,18 @@
     h4 {
       font-size: 30px;
       line-height: 42px;
-      margin-bottom: 2px;
+      margin-bottom: 3px;
     }
 
     p {
-      margin-bottom: 39px;
+      margin-bottom: 38px;
       max-width: 380px;
     }
 
     ul {
       display: block;
-      margin-bottom: 20px;
+      margin-bottom: 26px;
+      padding-left: 0;
     }
 
     li {
@@ -187,14 +189,25 @@
       }
     }
 
+    input {
+      padding-top: 12px;
+    }
+
     button {
       width: 100%;
       margin-bottom: 20px;
       margin-right: 0;
     }
 
+    span {
+      align-self: start;
+      max-width: 100%;
+    }
+
     div {
-      align-self: center;
+      padding-left: 0;
+      display: flex;
+      flex-direction: column;
     }
   }
 

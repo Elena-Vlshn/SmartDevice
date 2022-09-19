@@ -857,7 +857,7 @@ button,
   position: relative;
   padding-top: 8.5%;
   padding-bottom: 13%;
-  background-color: #00b3ff;
+  background-color: #f8f9fc;
   background-image: url("../img/svg/triangle.svg");
   background-repeat: no-repeat;
   background-size: 50.5% auto;
@@ -943,7 +943,7 @@ button,
   font-size: 18px;
   line-height: 21px;
   padding: 16px 25px 17px;
-  background-color: #00b3ff;
+  background-color: #f8f9fc;
 }
 
 .introduction__button-mobile {
@@ -976,7 +976,6 @@ button,
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-bottom: 10px;
 }
 
 .social__item:not(:last-child) {
@@ -1722,7 +1721,7 @@ button,
 
   .feedback {
     background: none;
-    background-color: #00b3ff;
+    background-color: #f8f9fc;
     padding-top: 47px;
     padding-bottom: 124px;
   }
@@ -1766,10 +1765,6 @@ button,
 
   .introduction__button {
     margin-left: 48px;
-  }
-
-  .social__list {
-    padding-left: 60px;
   }
 
   .social__item {
@@ -2006,10 +2001,6 @@ button,
     -ms-flex-pack: center;
     justify-content: center;
     padding: 12px 30px;
-  }
-
-  .social__list {
-    padding-left: 0;
   }
 
   .footer {

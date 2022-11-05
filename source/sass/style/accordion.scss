@@ -1,0 +1,60 @@
+.accordion {
+  display: grid;
+  grid-template-columns: minmax(220px, 470px) minmax(250px, 345px);
+  //max-width: 500px;
+
+  @include vp-1023 {
+    column-gap: 57px;
+  }
+
+  @include vp-767 {
+    display: block;
+    margin: 0 auto 50px auto;
+  }
+
+  & & {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  &__element:last-child {
+    margin-bottom: 0;
+  }
+
+  &__element {
+    @include vp-767 {
+      margin-bottom: 0;
+      padding: 10px 25px;
+      border-bottom: 1px solid $color-white;
+    }
+  }
+
+  &__element.is-active > &__button {
+    background-image: url("../img/svg/accordion-close-btn.svg");
+  }
+
+  &__button {
+    width: 100%;
+    padding: 10px 15px 10px 0;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    font-weight: 400;
+    font-size: 15px;
+    background-color: $color-default-black;
+    justify-content: start;
+    background-image: none;
+
+    @include vp-767 {
+      background-image: url("../img/svg/accordion-open-btn.svg");
+      background-repeat: no-repeat;
+      background-position: right;
+    }
+  }
+
+  // &__wrapper {
+  //   padding: 10px;
+  // }
+}

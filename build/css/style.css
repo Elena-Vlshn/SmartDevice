@@ -639,6 +639,58 @@ button,
   margin: 0 auto;
 }
 
+.accordion {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(220px, 470px) minmax(250px, 345px);
+  grid-template-columns: minmax(220px, 470px) minmax(250px, 345px);
+}
+
+.accordion .accordion {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.accordion__element:last-child {
+  margin-bottom: 0;
+}
+
+.accordion__element.is-active > .accordion__button {
+  background-image: url("../img/svg/accordion-close-btn.svg");
+}
+
+.accordion__button {
+  width: 100%;
+  padding: 10px 15px 10px 0;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 15px;
+  background-color: #041827;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+  background-image: none;
+}
+
+[data-accordion="element"].is-active > [data-accordion="content"] {
+  max-height: 100%;
+}
+
+[data-accordion="parent"].no-transition [data-accordion="content"] {
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+[data-accordion="content"] {
+  max-height: 0;
+  -webkit-transition: max-height 0.3s;
+  -o-transition: max-height 0.3s;
+  transition: max-height 0.3s;
+  overflow: hidden;
+}
+
 .btn {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -646,11 +698,7 @@ button,
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
   margin: 10px 0;
-  padding: 10px 20px;
   color: #f2f5f6;
   text-transform: uppercase;
   cursor: pointer;
@@ -857,7 +905,7 @@ button,
   position: relative;
   padding-top: 8.5%;
   padding-bottom: 13%;
-  background-color: #f8f9fc;
+  background-color: #00b3ff;
   background-image: url("../img/svg/triangle.svg");
   background-repeat: no-repeat;
   background-size: 50.5% auto;
@@ -943,7 +991,7 @@ button,
   font-size: 18px;
   line-height: 21px;
   padding: 16px 25px 17px;
-  background-color: #f8f9fc;
+  background-color: #00b2ff;
 }
 
 .introduction__button-mobile {
@@ -1026,6 +1074,12 @@ button,
   padding-right: 30px;
 }
 
+.footer__accordion {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-column: 2/4;
+}
+
 .footer__logo {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -1094,6 +1148,7 @@ button,
 
 .footer__nav-link {
   color: #f2f5f6;
+  font-size: 16px;
 }
 
 .footer__button {
@@ -1116,6 +1171,8 @@ button,
   line-height: 22px;
   margin-top: 0;
   margin-bottom: 8px;
+  color: #ffffff;
+  opacity: 0.7;
 }
 
 .contacts__phone {
@@ -1504,10 +1561,6 @@ button,
   flex-direction: column;
 }
 
-.accordion__button {
-  display: none;
-}
-
 .about {
   padding-top: 50px;
   padding-bottom: 100px;
@@ -1557,6 +1610,9 @@ button,
   background-color: transparent;
   padding-top: 13px;
   padding-bottom: 13px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .catalog {
@@ -1675,6 +1731,12 @@ button,
     padding: 0 50px;
   }
 
+  .accordion {
+    -webkit-column-gap: 57px;
+    -moz-column-gap: 57px;
+    column-gap: 57px;
+  }
+
   .header {
     position: static;
     padding-top: 20px;
@@ -1721,9 +1783,10 @@ button,
 
   .feedback {
     background: none;
-    background-color: #f8f9fc;
     padding-top: 47px;
     padding-bottom: 124px;
+    background-image: none;
+    background-color: #00b3ff;
   }
 
   .feedback__inner {
@@ -1800,8 +1863,12 @@ button,
     padding-right: 0;
   }
 
+  .footer__accordion {
+    grid-column: 1/-1;
+  }
+
   .footer__logo {
-    margin-bottom: 30px;
+    margin-bottom: 16px;
   }
 
   .footer__section-title {
@@ -1811,6 +1878,12 @@ button,
   .footer__social {
     padding-left: 0;
     padding-top: 10px;
+  }
+
+  .footer__nav-list {
+    -webkit-column-gap: 50px;
+    -moz-column-gap: 50px;
+    column-gap: 50px;
   }
 
   .footer__nav-item {
@@ -1925,6 +1998,23 @@ button,
 @media (max-width: 767px) {
   .container {
     padding: 0 25px;
+  }
+
+  .accordion {
+    display: block;
+    margin: 0 auto 50px auto;
+  }
+
+  .accordion__element {
+    margin-bottom: 0;
+    padding: 10px 25px;
+    border-bottom: 1px solid #ffffff;
+  }
+
+  .accordion__button {
+    background-image: url("../img/svg/accordion-open-btn.svg");
+    background-repeat: no-repeat;
+    background-position: right;
   }
 
   .modal__wrapper {
@@ -2152,35 +2242,6 @@ button,
     width: 100%;
     margin-right: 0;
     margin-bottom: 23px;
-  }
-
-  .accordion__button {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    border: none;
-    background-color: #041427;
-    background-image: url("../img/svg/accordion-open-btn.svg");
-    background-repeat: no-repeat;
-    background-position: right;
-    cursor: pointer;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 25px;
-  }
-
-  .accordion__button_closed {
-    background-image: url("../img/svg/accordion-close-btn.svg");
-  }
-
-  .accordion__button_hidden {
-    display: none;
-  }
-
-  .accordion__body_closed {
-    display: none;
   }
 
   .about {

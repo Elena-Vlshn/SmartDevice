@@ -99,6 +99,7 @@
   background-color: transparent;
   padding-top: 13px;
   padding-bottom: 13px;
+  justify-content: center;
 
   @include vp-767 {
     width: 160px;

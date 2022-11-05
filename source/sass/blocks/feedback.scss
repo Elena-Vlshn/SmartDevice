@@ -2,16 +2,17 @@
   position: relative;
   padding-top: 8.5%;
   padding-bottom: 13%;
-  background-color: $color-background-blue;
+  background-color: $color-form-background;
   background-image: url("../img/svg/triangle.svg");
   background-repeat: no-repeat;
   background-size: 50.5% auto;
 
   @include vp-1023 {
     background: none;
-    background-color: $color-background-blue;
     padding-top: 47px;
     padding-bottom: 124px;
+    background-image: none;
+    background-color: $color-form-background;
   }
 
   @include vp-767 {
